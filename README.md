@@ -3,4 +3,4 @@ An accessible, extensible, and self-contained Configuration Management Framework
 
 ### The DSL
 Sprout uses Python functions and arrays to push in data and configure your machine.
-If used within IDLE, Sprout gives you instructions for writing your SproutConfig files.
+</br>If used within IDLE, Sprout gives you instructions for writing your SproutConfig files.
