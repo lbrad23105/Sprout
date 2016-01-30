@@ -155,59 +155,54 @@ function console() {
 <body style = "margin:0px">
 
     <div class = "main">
-    <nav class = "header-side">
+        <nav class = "header-side">
+                
+            <a href ="#">
+            <div class = "logolink">
+            <img src = "http://i.imgur.com/7XA8xpe.png" width = "75%"/>
+            </div></a>
             
-        <a href ="#">
-        <div class = "logolink">
-        <img src = "http://i.imgur.com/7XA8xpe.png" width = "75%"/>
-        </div></a>
-        
-        <a href ="#">
-        <div onclick="click('console')" class = "link-active" id = "console">
-        Console
-        </div></a>
-        
-        <a href ="#">
-        <div class = "link" id = "nodes">
-        Nodes
-        </div></a>
-        
-        <a href ="#">
-        <div class = "link" id = "state">
-        State
-        </div></a>
+            <a href ="#">
+            <div onclick="click('console')" class = "link-active" id = "console">
+            Console
+            </div></a>
             
-    </nav>
+            <a href ="#">
+            <div class = "link" id = "nodes">
+            Nodes
+            </div></a>
+            
+            <a href ="#">
+            <div class = "link" id = "state">
+            State
+            </div></a>
+                
+        </nav>
     </div>
                     
-        <div class = "management">
-            <div id='content-area' class = "management-block">
-                <h1> Welcome to Console </h1>
-                <h5 style = "padding-left: 5%";> > Get Started by Adding a Node </h5>
-                <h5 style = "padding-left: 5%";> > Then Configure it with SproutDSC </h5>
-                <h5 style = "padding-left: 5%";> > Finally, Check the State of Your Newly Configured Node </h5>
-                <h5 style = "padding-left: 5%";> > Example: Create a new file called foo.ps1 on a Windows System</h5>
-                <pre align = "left">
-                <code style = "font-size:15px">                                       
-                    Node("foo.foobar.com",[ #In SproutDSC, all configurations are stored in an array.
-                        File(
-                        name = "foo.ps1",
-                        content = "Get-Command",
-                        ensure = "present",
-                        path = "C:\\Users\\",
-                        )# , Needed to seperate configurations.
-                    ])
-                </code>
-                </pre>
-                             
-            </div>
-
-
-            <div class = "management-block">
-                    
-            </div>
+    <div class = "management">
+        <div id='content-area' class = "management-block">
+            <h1> Welcome to Console </h1>
+            <h5 style = "padding-left: 5%";> > Get Started by Adding a Node </h5>
+            <h5 style = "padding-left: 5%";> > Then Configure it with SproutDSC </h5>
+            <h5 style = "padding-left: 5%";> > Finally, Check the State of Your Newly Configured Node </h5>
+            <h5 style = "padding-left: 5%";> > Example: Create a new file called foo.ps1 on a Windows System</h5>
+            <pre align = "left">
+            <code style = "font-size:15px">                                       
+                Node("foo.foobar.com",[ #In SproutDSC, all configurations are stored in an array.
+                    File(
+                    name = "foo.ps1",
+                    content = "Get-Command",
+                    ensure = "present",
+                    path = "C:\\Users\\",
+                    )# , Needed to seperate configurations.
+                ])
+            </code>
+            </pre>
         </div>
-            
+        <div class = "management-block">  
+        </div>
+    </div>
     <div class = "header-bottom">
         <a href = "#"><h1>+NEW</h1></a>
     </div>

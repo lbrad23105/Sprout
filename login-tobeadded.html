@@ -1,0 +1,91 @@
+<!-- test.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sprout Console - Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() { // Run on page ready
+			// Event Handlers
+			$("#login").click(function() { // Login Event Handler
+				var username = $('#username').val();
+				var password = $('#password').val();
+				alert(username+" ~ "+password);
+				//action here
+			});
+			// End Event Handlers
+			$('#fade').fadeIn(1200);
+		});
+	</script>
+	<style>
+		.sprout-green {
+			background: #26A69A;
+		}
+		.sp-above {
+			margin-top: 2em;
+		}
+		.vertical-center {
+			min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+			min-height: 100vh; /* These two lines are counted as one :-)       */
+			display: flex;
+			align-items: center;
+		}
+		#fade {
+			display: none;
+		}
+		body {
+			background: url('http://i.imgur.com/nlpTFAN.jpg');
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+<div class="container vertical-center">
+	<div id='fade' class="container jumbotron sprout-green pagination-centered text-center">
+		<div class="row">
+			<img src="http://i.imgur.com/7XA8xpe.png" />
+		</div>
+		<div class="row sp-above">
+			<div class="form-group sp-above">
+				<h2>
+					<div class="col-lg-4">
+						Username:
+					</div>
+					<div class="col-lg-8">
+						<input type="text" class="form-control" id="username">
+					</div>
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group sp-above">
+				<h2>
+					<div class="col-lg-4">
+						Password:
+					</div>
+					<div class="col-lg-8">
+						<input type="password" class="form-control" id="password">
+					</div>
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group sp-above">
+				<h2>
+					<div class="col-lg-10">
+						<span></span>
+					</div>
+					<div class="col-lg-2">
+						<button type="button" class="btn btn-info col-lg-12" id="login">Login</button>
+					</div>
+				</h2>
+			</div>
+		</div>
+	</div><!--End of 'jumbotron sprout-green' -->
+</div><!--End of 'container vertical-center' -->
+</body>
+</html>
