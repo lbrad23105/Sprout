@@ -3,20 +3,4 @@ An accessible, extensible, and self-contained Configuration Management Framework
 
 ### The DSL
 Sprout uses Python functions and arrays to push in data and configure your machine.
-Here is an example of a simple SproutConfig file: 
-'''javascript
-# Demo
-Config([ #In SproutDSC configurations are an array.
-    Directory(
-        name = "Wow",
-        ensure = "present",
-        path = "C:\\Users\\Luke Brady\\Desktop\\"
-        ),
-    File(
-        name = "helloworld.json",
-        content = "{\n  hello = 'world'\n}",
-        ensure = "present",
-        path = "C:\\Users\\Luke Brady\\Desktop\\Wow",
-        ),
-    ])
-'''
+If used within IDLE, Sprout gives you instructions for writing your SproutConfig files.
