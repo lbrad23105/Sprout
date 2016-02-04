@@ -2,6 +2,11 @@
 <html lang = "en">
 
 <title> Sprout Console </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <!---https://coolors.co/3d315b-444b6e-708b75-9ab87a-f8f991 COlors-->
 <style>
@@ -130,83 +135,88 @@
     }
 </style>
 <script>
-function write(out) {
-    document.getElementById('content-area').innerHTML = out;
-}
-
-function click(arg) {
-    switch(arg) {
-        case "console":
-            console();
-            break;
-        default:
-            write("<center>Page Reached in Error! Plz dont break our code!<center>");
-            break;
+    function nav() {
+        /* lbl stands for line by line; */
+        var lbl = "
+            <div class='logolink'>
+                <img src='http://i.imgur.com/7XA8xpe.png' width='75%'/>
+            </div>
+            <div class=\"link-active\" id=\"console\">Console</div>
+            <div class=\"link\" id=\"nodes\">Nodes</div>
+            <div class=\"link\" id=\"state\">State</div>
+        ";
+        $('#header-side').html(lbl);
     }
 
-}
-
-function console() {
-    write("<center>You have made it to the console page</center>");
-}
-</script>
-</head>
-
-<body style = "margin:0px">
-
-    <div class = "main">
-        <nav class = "header-side">
-                
-            <a href ="#">
-            <div class = "logolink">
-            <img src = "http://i.imgur.com/7XA8xpe.png" width = "75%"/>
-            </div></a>
-            
-            <a href ="#">
-            <div onclick="click('console')" class = "link-active" id = "console">
-            Console
-            </div></a>
-            
-            <a href ="#">
-            <div class = "link" id = "nodes">
-            Nodes
-            </div></a>
-            
-            <a href ="#">
-            <div class = "link" id = "state">
-            State
-            </div></a>
-                
-        </nav>
-    </div>
-                    
-    <div class = "management">
-        <div id='content-area' class = "management-block">
+    function console() {
+        var lbl = "
             <h1> Welcome to Console </h1>
-            <h5 style = "padding-left: 5%";> > Get Started by Adding a Node </h5>
-            <h5 style = "padding-left: 5%";> > Then Configure it with SproutDSC </h5>
-            <h5 style = "padding-left: 5%";> > Finally, Check the State of Your Newly Configured Node </h5>
-            <h5 style = "padding-left: 5%";> > Example: Create a new file called foo.ps1 on a Windows System</h5>
-            <pre align = "left">
-            <code style = "font-size:15px">                                       
-            Node("foo.foobar.com",
-                Config([ #In SproutDSC, all configurations are stored in an array.
-                    File(
-                    name = "foo.ps1",
-                    content = "Get-Command",
-                    ensure = "present",
-                    path = "C:\\Users\\",
-                    )# , Needed to seperate configurations.
-                    ])
-                )
+            <h5 style = 'padding-left: 5%'\;> > Get Started by Adding a Node </h5>
+            <h5 style = 'padding-left: 5%'\;> > Then Configure it with SproutDSC </h5>
+            <h5 style = 'padding-left: 5%'\;> > Finally, Check the State of Your Newly Configured Node </h5>
+            <h5 style = 'padding-left: 5%'\;> > Example: Create a new file called foo.ps1 on a Windows System</h5>
+            <pre align = 'left'>
+            <code style = 'font-size:15px'>Node(\"foo.foobar.com\", Config([ #In SproutDSC, all configurations are stored in an array.\r\n              File(\r\n                   name = \"foo.ps1\",\r\n                   content = \"Get-Command\",\r\n                   ensure = \"present\",\r\n                   path = \"C:\\\\Users\\\\\",\r\n              ) # , Needed to seperate configurations.\r\n          ]))
             </code>
             </pre>
+        ";
+        $('#content-area').html(lbl);
+    }
+
+    function nodes() {
+        var lbl = "
+            This is the Nodes Page.
+        ";
+        $('#content-area').html(lbl);
+    }
+
+    function state() {
+        var lbl = "
+            This is the State Page.
+        ";
+        $('#content-area').html(lbl);
+    }
+
+    function new_node() {
+        var lbl = "
+            This is the New Node Page.
+        ";
+        $('#content-area').html(lbl);
+    }
+
+    $(document).ready(function () {
+        nav();
+        console();
+        /* Event Handlers Below */
+        $('#console').click(function () {
+            console();
+        });
+        $('#nodes').click(function () {
+            nodes();
+        });
+        $('#state').click(function () {
+            state();
+        });
+        $('#new_node').click(function () {
+            new_node()
+        });
+        /* Event Handlers Above */
+    });
+    </script>
+</head>
+<body style = "margin:0px">
+    <div class = "main">
+        <nav class = "header-side" id='header-side'><!-- id is the same as class because the out js function goes off of id's -->                
+        </nav>
+    </div>
+    <div class = "management">
+        <div id='content-area' class = "management-block">
         </div>
         <div class = "management-block">  
         </div>
     </div>
     <div class = "header-bottom">
-        <a href = "#"><h1>+NEW</h1></a>
+        <h1 id="new_node">+NEW</h1>
     </div>
 </body>
 </html>
